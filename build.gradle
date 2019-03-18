@@ -1,0 +1,46 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.2.0.BUILD-SNAPSHOT'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+
+String junitVersion = '5.3.1'
+String mockitoVersion = '2.25.1'
+
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/snapshot' }
+	maven { url 'https://repo.spring.io/milestone' }
+}
+
+group 'com.araltiparmak'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+
+dependencies {
+	implementation "org.springframework.boot:spring-boot-starter-web"
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+
+	testImplementation "org.springframework.boot:spring-boot-starter-test"
+	testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+	testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+	testImplementation "org.mockito:mockito-core:$mockitoVersion"
+	testImplementation "org.mockito:mockito-junit-jupiter:$mockitoVersion"
+}
+
+test {
+	useJUnitPlatform()
+
+	testLogging.showStandardStreams = true
+
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}
+
