@@ -1,4 +1,4 @@
-package com.araltiparmak.book;
+package com.araltiparmak.springbootjunitmockito.mockitosample;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package com.araltiparmak.mockito;
+package com.araltiparmak.springbootjunitmockito.mockitosample;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

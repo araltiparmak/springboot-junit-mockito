@@ -1,4 +1,4 @@
-package com.araltiparmak.book;
+package com.araltiparmak.springbootjunitmockito.mockitosample;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

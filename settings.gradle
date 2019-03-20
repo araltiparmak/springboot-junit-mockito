@@ -12,4 +12,4 @@ pluginManagement {
 		}
 	}
 }
-rootProject.name = 'springboot-junit-mockito'
+rootProject.name = 'springbootjunitmockitosample'

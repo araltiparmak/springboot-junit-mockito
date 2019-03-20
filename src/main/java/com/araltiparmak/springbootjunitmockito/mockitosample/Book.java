@@ -1,4 +1,4 @@
-package com.araltiparmak.book;
+package com.araltiparmak.springbootjunitmockito.mockitosample;
 
 public class Book {
 

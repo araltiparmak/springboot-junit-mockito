@@ -1,4 +1,4 @@
-package com.araltiparmak.mockito.mock;
+package com.araltiparmak.springbootjunitmockito.mockitosample.mock;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

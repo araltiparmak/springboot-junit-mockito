@@ -1,6 +1,5 @@
-package com.araltiparmak.mockito;
+package com.araltiparmak.springbootjunitmockito.mockitosample;
 
-import com.araltiparmak.book.BookService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
