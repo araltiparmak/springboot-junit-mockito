@@ -15,8 +15,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.BDDMockito.then;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class ArgumentMatcher {
@@ -35,6 +36,23 @@ public class ArgumentMatcher {
         assertThat(anyBook).isNotNull();
         assertEquals(anyBook, book);
         verify(bookRepository).findById(anyInt());
+    }
+
+    @Test
+    public void findByIdBDD() {
+        //given
+        Book anyBook = new Book(1, "AnyBook");
+        given(bookRepository.findById(1)).willReturn(Optional.of(anyBook));
+
+        //when
+        Book foundBook = bookService.findById(1);
+
+        //then
+        assertThat(anyBook).isNotNull();
+        assertEquals(anyBook, foundBook);
+//        then(bookRepository).should().findById(anyInt());
+        then(bookRepository).should(times(1)).findById(anyInt());
+        then(bookRepository).shouldHaveNoMoreInteractions();
     }
 
     @Test
